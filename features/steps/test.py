@@ -1,22 +1,21 @@
 from behave import *
-from selenium.webdriver.common.by import By
 
 @given('load the page')
 def step_impl(context):
-    context.browser.get("https://www.selenium.dev/selenium/web/web-form.html")
+    context.browser.visit("https://www.selenium.dev/selenium/web/web-form.html")
 
     assert context.browser.title == "Web form"
 
 @when('submit a form')
 def step_impl(context):
-    input = context.browser.find_element(by=By.NAME, value="my-text")
-    input.send_keys("Selenium test!")
+    input = context.browser.find_by_name("my-text")
+    input.fill("Selenium test!")
 
-    submit_button = context.browser.find_element(by=By.CSS_SELECTOR, value="button")
-    submit_button.click()
+    button = context.browser.find_by_css("button")
+    button.click()
 
 @then('expect success')
 def step_impl(context):
-    message = context.browser.find_element(by=By.ID, value="message")
+    message = context.browser.find_by_id("message")
 
     assert message.text == "Received!"
