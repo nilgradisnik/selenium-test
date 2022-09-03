@@ -1,7 +1,8 @@
-# Selenium testing with behave
+# Web testing experiment
 
-https://www.selenium.dev/
-https://behave.readthedocs.io/en/stable/index.html
+- https://www.selenium.dev/
+- https://behave.readthedocs.io/en/stable/index.html
+- https://splinter.readthedocs.io/en/latest/index.html
 
 ## Install packages
 
